@@ -31,7 +31,8 @@ body {
 .menu-header {
     border-bottom: 2px solid var(--white);
     margin: 5px 10px;
-    display: flex;justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .menu-header h1 {

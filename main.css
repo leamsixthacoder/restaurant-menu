@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+
+}
+.menu {
+    flex-wrap: wrap;
+}
+
+img {
+    width: 480px;
+}
+
+.food-menu {
+    margin: 50px 50px;
+}
+
+.menu-header {
+    border-bottom: 3px solid #7e8d91;
+}
+
+.menu-header,
+.menu-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.menu-header h2 {
+    font-size: 2.5rem;
+    color: #1873e9;
+}
+
+.menu-header h2,
+.menu-content h3 {
+
+    margin-right: 200px;
+}
+
+.menu-header span {
+    font-size: 1.5rem;
+    align-self: center;
+}
+
+.menu-content h3 {
+    font-size: 1.5rem;
+}
+
+.menu-content span {
+    font-size: 1.5rem;
+}
