@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 5px;
+}
+
+.container {
+    border: 1px solid #000;
+    max-width: 620px;
+    height: 100vh;
+    margin: 10px 5px;
+}
