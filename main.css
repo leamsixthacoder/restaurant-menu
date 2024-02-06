@@ -12,6 +12,22 @@ body {
     justify-content: space-between;
 
 }
+
+.header {
+    display: flex;
+    gap: 25px;
+    margin: 30px 50px;
+}
+.header h1{
+    font-size: 3.5rem;
+}
+.header > .icon{
+   align-self: center;
+}
+ .icon:hover {
+    cursor: pointer;
+}
+
 .menu {
     flex-wrap: wrap;
 }
@@ -21,7 +37,7 @@ img {
 }
 
 .food-menu {
-    margin: 50px 50px;
+    margin: 10px 50px;
 }
 
 .menu-header {
@@ -57,4 +73,47 @@ img {
 
 .menu-content span {
     font-size: 1.5rem;
+}
+
+.pop-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  .form {
+    background-color: #fff;
+    min-width: 500px;
+    padding: 20px;
+    border-radius: 8px;
+
+  }
+  
+  .dynamic-fields {
+    display: flex;
+    margin-top: 25px;
+  }
+  .form label, .form input {
+    margin-bottom: 20px;
+  }
+
+  .add-more {
+    cursor: pointer;
+    color: #007bff;
+    font-size: 24px;
+    align-self: flex-start;
+  }
+
+  #display-area {
+    margin-top: 20px;
+  }
+
+  .hidden {
+    display: none;
 }

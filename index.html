@@ -1,94 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template 2 Restaurant</title>
-    <link rel="stylesheet" href="main.css">
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <img src="mangu-xcape.jpg" alt="dish" />
-        <img src="Bandera-Dominicana.jpg" alt="dish" />
-        <img src="sandwich.jpg" alt="dish" />
-        <img src="compania-total-bebidas.webp" alt="dish" />
-      </div>
-    </header>
 
-    <div class="container menu">
-      <div class="food-menu">
-        <div class="menu-header">
-          <h2>Desayuno</h2>
-          <span>RD$</span>
-        </div>
-        <div class="menu-content">
-            <h3>Mangu con los 3 golpes</h3>
-            <span>120</span>
-        </div>
-        <div class="menu-content">
-            <h3>Arroz con habichuela, pollo ensalada y fritos</h3>
-            <span>120</span>
-        </div>
-        <div class="menu-content">
-            <h3>Spaguetie con fritos</h3>
-            <span>120</span>
-        </div>
-      </div>
-      <div class="food-menu">
-        <div class="menu-header">
-          <h2>Almuerzo</h2>
-          <span>RD$</span>
-        </div>
-        <div class="menu-content">
-            <h3>Mangu con los 3 golpes</h3>
-            <span>120</span>
-        </div>
-        <div class="menu-content">
-            <h3>Arroz con habichuela, pollo ensalada y fritos</h3>
-            <span>120</span>
-        </div>
-        <div class="menu-content">
-            <h3>Spaguetie con fritos</h3>
-            <span>120</span>
-        </div>
-      </div>
-      <div class="food-menu">
-        <div class="menu-header">
-          <h2>Almuerzo</h2>
-          <span>RD$</span>
-        </div>
-        <div class="menu-content">
-            <h3>Mangu con los 3 golpes</h3>
-            <span>120</span>
-        </div>
-        <div class="menu-content">
-            <h3>Arroz con habichuela, pollo ensalada y fritos</h3>
-            <span>120</span>
-        </div>
-        <div class="menu-content">
-            <h3>Spaguetie con fritos</h3>
-            <span>120</span>
-        </div>
-      </div>
-      <div class="food-menu">
-        <div class="menu-header">
-          <h2>Almuerzo</h2>
-          <span>RD$</span>
-        </div>
-        <div class="menu-content">
-            <h3>Mangu con los 3 golpes</h3>
-            <span>120</span>
-        </div>
-        <div class="menu-content">
-            <h3>Arroz con habichuela, pollo ensalada y fritos</h3>
-            <span>120</span>
-        </div>
-        <div class="menu-content">
-            <h3>Spaguetie con fritos</h3>
-            <span>120</span>
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Template 2 Restaurant</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <img src="mangu-xcape.jpg" alt="dish" />
+      <img src="Bandera-Dominicana.jpg" alt="dish" />
+      <img src="sandwich.jpg" alt="dish" />
+      <img src="compania-total-bebidas.webp" alt="dish" />
     </div>
-  </body>
+  </header>
+  <div class="header">
+    <h1>Menu</h1>
+    <svg id="add" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-plus" width="44"
+      height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+      <path d="M9 12h6" />
+      <path d="M12 9v6" />
+    </svg>
+  </div>
+
+  <div id="menuContainer" class="container menu">
+    <!-- <div class="food-menu">
+      <div class="menu-header">
+        <h2>Desayuno</h2>
+        <span>RD$</span>
+      </div>
+      <div class="menu-content">
+        <h3>Mangu con los 3 golpes</h3>
+        <span>120</span>
+      </div>
+      <div class="menu-content">
+        <h3>Arroz con habichuela, pollo ensalada y fritos</h3>
+        <span>120</span>
+      </div>
+      <div class="menu-content">
+        <h3>Spaguetie con fritos</h3>
+        <span>120</span>
+      </div>
+    </div> -->
+  </div>
+
+  <div class="pop-up hidden">
+    <div class="form" id="food-form">
+      <form class="">
+        <label for="food-menu-name" class="label-menu">Nombre Menu</label>
+        <input id="food-menu-name" name="food-menu-name" class="input-menu" type="text">
+        <div class="dynamic-fields">
+          <div>
+            <label for="dish-name">Plato</label>
+            <input id="dish-name" class="dish-input" name="dish-name[]" type="text">
+            <label for="price">Precio</label>
+            <input id="price" class="price-input" name="price[]" type="text">
+          </div>
+          <div class="add-more">
+            <svg id="add-more" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M12 5l0 14" />
+              <path d="M5 12l14 0" />
+            </svg>
+          </div>
+        </div>
+      </form>
+
+      <div id="display-area"></div>
+      <button onclick="showValues()">Guardar</button>
+    </div>
+  </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+
 </html>
