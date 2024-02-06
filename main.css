@@ -10,13 +10,12 @@ body {
 .container {
     display: flex;
     justify-content: space-between;
-
 }
 
 .header {
     display: flex;
     gap: 25px;
-    margin: 30px 50px;
+    margin: 30px 20px;
 }
 .header h1{
     font-size: 3.5rem;
@@ -37,7 +36,9 @@ img {
 }
 
 .food-menu {
-    margin: 10px 50px;
+    margin: 10px 20px;
+    height: 100vh;
+    width: 45%;
 }
 
 .menu-header {
@@ -50,6 +51,9 @@ img {
     justify-content: space-between;
     margin-top: 20px;
 }
+.menu-header-action {
+    display: flex;
+}
 
 .menu-header h2 {
     font-size: 2.5rem;
@@ -59,7 +63,7 @@ img {
 .menu-header h2,
 .menu-content h3 {
 
-    margin-right: 200px;
+    margin-right: 25px;
 }
 
 .menu-header span {
@@ -72,14 +76,14 @@ img {
 }
 
 .menu-content span {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-weight: 500;
 }
 
 .pop-up {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
@@ -117,3 +121,118 @@ img {
   .hidden {
     display: none;
 }
+
+@media (width <= 900px) {
+    .images {
+        display: none;
+    }
+    .container {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .header {
+        display: flex;
+       justify-content: center;
+        margin: 30px auto;
+    }
+    .header h1{
+        font-size: 2.5rem;
+    }
+    .header > .icon{
+       align-self: center;
+       width: 34px;
+       height: 34px;
+    }
+     .icon:hover {
+        cursor: pointer;
+    }
+    
+    .menu {
+        flex-wrap: none;
+    }
+    
+    .food-menu {
+        margin: 10px auto;
+        height:auto;
+        width: 80%;
+    }
+    
+    .menu-header {
+        border-bottom: 3px solid #7e8d91;
+    }
+    
+    .menu-header,
+    .menu-content {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    
+    .menu-header h2 {
+        font-size: 2rem;
+        color: #1873e9;
+    }
+    
+    .menu-header h2,
+    .menu-content h3 {
+        margin-right: 25px;
+    }
+    
+    .menu-header span {
+        font-size: 1.5rem;
+        align-self: center;
+    }
+    
+    .menu-content h3 {
+        font-size: 1rem;
+    }
+    
+    .menu-content span {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    
+    .pop-up {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+      }
+      .form {
+        background-color: #fff;
+        min-width: 500px;
+        padding: 20px;
+        border-radius: 8px;
+    
+      }
+      
+      .dynamic-fields {
+        display: flex;
+        margin-top: 25px;
+      }
+      .form label, .form input {
+        margin-bottom: 20px;
+      }
+    
+      .add-more {
+        cursor: pointer;
+        color: #007bff;
+        font-size: 24px;
+        align-self: flex-start;
+      }
+    
+      #display-area {
+        margin-top: 20px;
+      }
+    
+      .hidden {
+        display: none;
+    }
+}
+
