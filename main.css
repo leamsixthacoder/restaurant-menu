@@ -31,7 +31,7 @@ body {
     flex-wrap: wrap;
 }
 
-img {
+.images img {
     width: 480px;
 }
 
@@ -86,6 +86,7 @@ img {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
+    height: 100vh;
     top: 0;
     left: 0;
     width: 100%;
@@ -193,43 +194,6 @@ img {
         font-weight: 500;
     }
     
-    .pop-up {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.5);
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1;
-      }
-      .form {
-        background-color: #fff;
-        min-width: 500px;
-        padding: 20px;
-        border-radius: 8px;
-    
-      }
-      
-      .dynamic-fields {
-        display: flex;
-        margin-top: 25px;
-      }
-      .form label, .form input {
-        margin-bottom: 20px;
-      }
-    
-      .add-more {
-        cursor: pointer;
-        color: #007bff;
-        font-size: 24px;
-        align-self: flex-start;
-      }
-    
-      #display-area {
-        margin-top: 20px;
-      }
     
       .hidden {
         display: none;

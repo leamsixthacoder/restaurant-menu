@@ -18,10 +18,6 @@ save.addEventListener('click', addMenuList);
 close.addEventListener('click', closePop);
 
 
-
-function editMenu() {
-    console.log('edit')
-}
 function closePop() {
     document.querySelectorAll('.dynamic-fields input').forEach(input => (input.value = ''));
     foodMenuNameInput.value = '';
@@ -49,7 +45,7 @@ function addMoreFields() {
 
 function addMenuList() {
     const menuName = foodMenuNameInput.value;
-
+    const message = document.createElement('span')
     if (menuName && addedValues.length > 0) {
         menuArray.push({
             name: menuName,
@@ -74,6 +70,7 @@ function addMenuList() {
 
         // Append each menu to the menuContainer
         loadMenus();
+        location.reload()
     }
 }
 
@@ -90,7 +87,7 @@ function loadMenus() {
             <div class="menu-header">
                 <div class="menu-header-action">
                 <h2>${menu.name}</h2>
-                <svg onclick="editMenu()" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit-circle" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg onclick="editMenu(${storedMenus.indexOf(menu)})" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit-circle" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <path d="M12 15l8.385 -8.415a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3z" />
                 <path d="M16 5l3 3" />
@@ -112,4 +109,33 @@ function loadMenus() {
         `;
         menuContainer.appendChild(container);
     });
+}
+
+
+function editMenu(index) {
+    // Open modal
+    popup.classList.remove('hidden');
+
+    // Load the selected menu for editing
+    const selectedMenu = menuArray[index];
+
+    document.getElementById('food-menu-name').value = selectedMenu.name;
+    addedValues.length = 0;
+    addedValues.push(...selectedMenu.menu);
+
+    // Display existing menu items
+    displayArea.innerHTML = '';
+    selectedMenu.menu.forEach(dish => {
+        const newItem = document.createElement('div');
+        newItem.textContent = `Plato: ${dish.dish}, Precio: ${dish.price}`;
+        displayArea.appendChild(newItem);
+    });
+
+    // Remove the selected menu from menuArray
+    menuArray.splice(index, 1);
+
+    // Save the updated menuArray to local storage
+    localStorage.setItem('menus', JSON.stringify(menuArray));
+
+
 }
