@@ -1,12 +1,20 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
 }
 
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #222;
+    color: #fefefe;
 }
 
+header {
+    font-family: '';
+    font-weight: 500;
+    font-style: italic;
+}
+/* 
 .container {
     display: flex;
     justify-content: space-between;
@@ -198,5 +206,5 @@ body {
       .hidden {
         display: none;
     }
-}
+} */
 

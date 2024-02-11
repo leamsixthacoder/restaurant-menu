@@ -5,19 +5,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Template 2 Restaurant</title>
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body>
   <header>
-    <div class="container images">
-      <img src="mangu-xcape.jpg" alt="dish" />
-      <img src="Bandera-Dominicana.jpg" alt="dish" />
-      <img src="sandwich.jpg" alt="dish" />
-      <img src="compania-total-bebidas.webp" alt="dish" />
+    <div class="left-image-container">
+      <img src="assets/images/bandera-dominican.png" alt="dishes">
+    </div>
+    <div class="center-content-container">
+      <h2>Food Menu</h2>
+      <h1>El Sazon de la Abuela</h1>
+      <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi reprehenderit quidem fugit rem. Cupiditate
+        commodi perspiciatis similique! Quo, amet ducimus! Saepe consequatur praesentium illo inventore aut iusto
+        voluptatibus ipsa laudantium!</span>
+    </div>
+    <div class="right-image-container">
+      <img src="assets/images/mangu-tres-golpes.jpg" alt="dishes">
     </div>
   </header>
-  <div class="header">
+  <!-- <div class="header">
     <h1>Menu</h1>
     <svg id="add" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-plus" width="44"
       height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round"
@@ -27,7 +34,7 @@
       <path d="M9 12h6" />
       <path d="M12 9v6" />
     </svg>
-  </div>
+  </div> -->
 
   <div id="menuContainer" class="container menu">
 
@@ -65,8 +72,8 @@
             <input id="price" class="price-input" name="price[]" type="text">
           </div>
           <div class="add-more">
-            <svg id="add-more" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24"
-              viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round"
+            <svg id="add-more" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24"
+              height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round"
               stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M12 5l0 14" />
@@ -82,7 +89,7 @@
     </div>
   </div>
   </div>
-  <script src="main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
