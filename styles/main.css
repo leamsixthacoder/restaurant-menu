@@ -1,19 +1,125 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
 }
 
 body {
-    background-color: #222;
+    background-color: #000;
     color: #fefefe;
+    font-family: 'Protest Riot', sans-serif;
 }
 
 header {
-    font-family: '';
-    font-weight: 500;
-    font-style: italic;
+    text-align: center;
+    margin:1.5rem;   
 }
+.header-container {
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+}
+img {
+    max-width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
+
+.left-image-container, .right-image-container {
+    
+    max-width: 550px;
+    margin: auto;
+    /* border: 15px solid #f15301;
+    border-radius: 50%; */ 
+
+}
+
+.center-content-container {
+    align-self: self-start;
+    margin: 0 50px;
+
+    
+}
+
+.center-content-container h2 {
+    font-size: 6.3rem;
+    margin: 10px 0 0 0;
+    color: #f15301;
+}
+.center-content-container h1 {
+    font-size: 5.3rem;
+    text-transform: uppercase;
+}
+.center-content-container p {
+    font-size: 1rem;
+    font-weight: 100;
+    margin: 0 100px;
+    display: none
+}
+.icon-tabler-circle-plus {
+    margin: 15px;
+}
+
+.icon:hover {
+    cursor: pointer;
+}
+
+/* MENU STYLES */
+
+.container-menu {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 50px;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    color: #f15301;
+    margin: 10px 0;
+}
+.menu-header span{
+    font-size: 1.5rem;
+    font-weight: lighter;
+    align-self: center;
+    text-transform: uppercase;
+}
+.menu-header-action {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 100px;
+}
+.menu-header-action h2{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+}
+.menu-header-action h2:hover{
+    cursor: pointer;
+}
+
+.menu-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    align-items: center;
+}
+.menu-content h3{
+    font-size: 2rem;
+    max-width: 300px;
+}
+.menu-content span{
+    font-size: 1.8rem;
+}
+
+
+
+
+
+
+
+
 /* 
 .container {
     display: flex;
@@ -87,6 +193,7 @@ header {
     font-size: 2rem;
     font-weight: 500;
 }
+*/
 
 .pop-up {
     display: flex;
@@ -99,6 +206,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 1;
+    color: #000;
   }
   .form {
     background-color: #fff;
@@ -206,5 +314,5 @@ header {
       .hidden {
         display: none;
     }
-} */
+} 
 
