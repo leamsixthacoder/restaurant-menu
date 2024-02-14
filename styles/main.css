@@ -1,6 +1,3 @@
-
-@import url('../assets/fonts/Protest_Riot/ProtestRiot-Regular.ttf');
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,20 +5,20 @@
 
 
 @font-face {
-    font-display: swap; 
+    font-display: swap;
     font-family: 'Protest Revolution';
     font-style: normal;
     font-weight: 400;
-    src: url('../assets/fonts/protest-revolution-v2-latin/protest-revolution-v2-latin-regular.woff2') format('woff2'); 
-  }
+    src: url('../assets/fonts/protest-revolution-v2-latin/protest-revolution-v2-latin-regular.woff2') format('woff2');
+}
 
-  @font-face {
-    font-display: swap; 
+@font-face {
+    font-display: swap;
     font-family: 'Protest Riot';
     font-style: normal;
     font-weight: 400;
-    src: url('../assets/fonts/protest-riot-v2-latin/protest-riot-v2-latin-regular.woff2') format('woff2'); 
-  }
+    src: url('../assets/fonts/protest-riot-v2-latin/protest-riot-v2-latin-regular.woff2') format('woff2');
+}
 
 body {
     background-color: #000;
@@ -55,6 +52,8 @@ img {
     max-width: 550px;
     margin: auto;
     overflow: hidden;
+    border: 10px solid #f15301;
+    border-radius: 50%;
 
 }
 
@@ -65,33 +64,38 @@ img {
 
 }
 
-img.displaySlide{
+img.displaySlide {
     display: block;
     opacity: 0;
     transition: opacity 0.5s ease-in;
 }
-img.displaySlide:first-child{
+
+img.displaySlide:first-child {
     opacity: 1;
 }
 
 @keyframes slide {
     0% {
-      opacity: 0;
+        opacity: 0;
     }
+
     20% {
-      opacity: 1;
+        opacity: 1;
     }
+
     80% {
-      opacity: 1;
+        opacity: 1;
     }
+
     100% {
-      opacity: 0;
+        opacity: 0;
     }
-  }
-  img.displaySlide{
+}
+
+img.displaySlide {
     animation: slide 10s infinite;
 }
-  
+
 
 .center-content-container {
     align-self: self-start;
@@ -195,13 +199,24 @@ img.displaySlide:first-child{
 }
 
 .form {
+    position: relative;
     background-color: #fff;
     min-width: 700px;
-    height: 30vh;
+    height: 60vh;
     padding: 20px;
     border-radius: 8px;
 
 }
+
+.header-add-menu {
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.header-add-menu h3 {
+    font-size: 2rem;
+}
+
 
 .dynamic-fields {
     display: flex;
@@ -211,43 +226,105 @@ img.displaySlide:first-child{
 .form label,
 .form input {
     margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.form label {
+    font-size: 1.5rem;
+}
+
+.form input {
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #007bff;
 }
 
 .add-more {
     cursor: pointer;
     color: #007bff;
-    font-size: 24px;
+    margin-left: 8px;
+    margin-top: 5px;
+    font-size: 26px;
     align-self: flex-start;
 }
 
 #display-area {
-    margin-top: 20px;
+    margin: 20px 0;
+}
+
+#save,
+#close {
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+}
+
+#save:hover,
+#close:hover,
+.delete-button:hover {
+    cursor: pointer;
+}
+
+#save {
+    background-color: #83f07f;
+}
+
+#close {
+    background-color: #7fb9f0;
+}
+
+.delete-button {
+    margin-top: 10px;
+    margin-left: 5px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    background-color: #f08c7f;
 }
 
 .hidden {
     display: none;
 }
 
+.warning {
+    color: #e64e3b;
+}
+.message-action {
+    position: absolute;
+    padding: 5px 5px;
+    margin-top: 130px;
+    margin-left: 450px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #1c923a;
+    transition: opacity 0.5s ease-in;
+}
+
 @media (width <=1200px) {
-    
+
     .center-content-container h2 {
         font-size: 3.3rem;
         margin: 10px 0 0 0;
         color: #f15301;
     }
-    
+
     .center-content-container h1 {
         font-size: 4.3rem;
         text-transform: uppercase;
     }
-    
+
     /* MENU STYLES */
-    
+
     .container-menu {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         margin: 20px 50px;
-    } 
-    
+    }
+
 }

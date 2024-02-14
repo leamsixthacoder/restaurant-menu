@@ -77,12 +77,15 @@ function nextSlideRight() {
 
 loadMenus();
 
-add.addEventListener('click', () => popup.classList.remove('hidden'));
+add.addEventListener('click', openPopop);
 addMoreField.addEventListener('click', addMoreFields);
 save.addEventListener('click', addMenuList);
 close.addEventListener('click', closePop);
 
-
+function openPopop () {
+    popup.classList.remove('hidden')
+    document.querySelector('.header-add-menu h3').innerHTML = 'Añadir Menu'
+}
 function closePop() {
     document.querySelectorAll('.dynamic-fields input').forEach(input => (input.value = ''));
     foodMenuNameInput.value = '';
@@ -202,7 +205,7 @@ function loadMenus() {
 function editMenu(index) {
     // Open modal
     popup.classList.remove('hidden');
-
+    document.querySelector('.header-add-menu h3').innerHTML = 'Editar Menu'
     // Load the selected menu for editing
     const selectedMenu = menuArray[index];
 
