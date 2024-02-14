@@ -7,9 +7,11 @@ const addMoreField = document.getElementById('add-more');
 const popup = document.querySelector('.pop-up');
 const save = document.getElementById('save');
 const close = document.getElementById('close');
+const deleteArray = document.getElementById('delete');
 const displayArea = document.getElementById('display-area');
 const foodMenuNameInput = document.getElementById('food-menu-name');
-
+const message = document.createElement('span')
+message.className = 'warning'
 //Image slider
 
 const slidesLeft = document.querySelectorAll('.slides-left img')
@@ -35,7 +37,7 @@ function initializerSlide() {
 
 function showSlideLeft(index) {
     if (index >= slidesLeft.length) {
-         slideIndexLeft = 0
+        slideIndexLeft = 0
 
     } else if (index < 0) {
         slideIndexLeft = slidesLeft.length - 1
@@ -47,10 +49,11 @@ function showSlideLeft(index) {
     slidesLeft[slideIndexLeft].classList.add('displaySlide')
 
 }
+
 function showSlideRight(index) {
-    
-    if ( index >= slideRight.length) {
-         slideIndexRight = 0
+
+    if (index >= slideRight.length) {
+        slideIndexRight = 0
     } else if (index < 0) {
         slideIndexRight = slideRight.length - 1
     }
@@ -59,17 +62,17 @@ function showSlideRight(index) {
     })
     slideRight[slideIndexRight].classList.add('displaySlide')
 }
+
 function nextSlideLeft() {
     slideIndexLeft++
     showSlideLeft(slideIndexLeft)
 
 }
+
 function nextSlideRight() {
     slideIndexRight++
     showSlideRight(slideIndexRight)
 }
-
-
 
 
 loadMenus();
@@ -83,12 +86,25 @@ close.addEventListener('click', closePop);
 function closePop() {
     document.querySelectorAll('.dynamic-fields input').forEach(input => (input.value = ''));
     foodMenuNameInput.value = '';
+    displayArea.innerHTML = '';
     popup.classList.add('hidden');
 }
+
+// function deleteList(index) {
+//     // Clear the menu array for the specified index
+//     menuArray.splice(index, 1);
+//     // Save the updated menuArray to local storage
+//     localStorage.setItem('menus', JSON.stringify(menuArray));
+
+//     // Reload the menus
+//     loadMenus();
+// }
 
 function addMoreFields() {
     const dishValue = document.querySelector('.dynamic-fields .dish-input').value;
     const priceValue = document.querySelector('.dynamic-fields .price-input').value;
+    save.classList.remove('hidden')
+    document.querySelector('form').classList.remove('hidden')
 
     if (dishValue && priceValue) {
         const newItem = document.createElement('div');
@@ -103,16 +119,25 @@ function addMoreFields() {
 
         document.querySelectorAll('.dynamic-fields input').forEach(input => (input.value = ''));
     }
+
 }
 
 function addMenuList() {
     const menuName = foodMenuNameInput.value;
-    const message = document.createElement('span')
     if (menuName && addedValues.length > 0) {
-        menuArray.push({
-            name: menuName,
-            menu: addedValues
-        });
+
+        const existingMenuIndex = menuArray.findIndex(menu => menu.name === menuName);
+
+        if (existingMenuIndex !== -1) {
+            // Update the existing menu
+            menuArray[existingMenuIndex].menu = addedValues;
+        } else {
+            // Add a new menu
+            menuArray.push({
+                name: menuName,
+                menu: addedValues
+            });
+        }
 
         // Save menuArray to local storage
         localStorage.setItem('menus', JSON.stringify(menuArray));
@@ -133,6 +158,11 @@ function addMenuList() {
         // Append each menu to the menuContainer
         loadMenus();
         location.reload()
+    } else {
+        displayArea.innerHTML = '';
+        message.innerHTML = 'Por favor ingresar el nombre del menu o el plato'
+        displayArea.appendChild(message)
+
     }
 }
 
@@ -182,17 +212,37 @@ function editMenu(index) {
 
     // Display existing menu items
     displayArea.innerHTML = '';
-    selectedMenu.menu.forEach(dish => {
+    selectedMenu.menu.forEach((dish, dishIndex) => {
         const newItem = document.createElement('div');
         newItem.textContent = `Plato: ${dish.dish}, Precio: ${dish.price}`;
+        const deleteButton = document.createElement('button');
+        deleteButton.className = 'delete-button';
+        deleteButton.textContent = 'Eliminar Plato';
+        deleteButton.addEventListener('click', () => deleteDish(index, dishIndex));
+        newItem.appendChild(deleteButton);
         displayArea.appendChild(newItem);
     });
 
-    // Remove the selected menu from menuArray
-    menuArray.splice(index, 1);
+    deleteArray.addEventListener('click', deleteList(index))
+    // Update only the menu property of the selected menu
+    selectedMenu.menu = addedValues;
 
     // Save the updated menuArray to local storage
     localStorage.setItem('menus', JSON.stringify(menuArray));
 
 
+}
+
+function deleteDish(menuIndex, dishIndex) {
+    // Delete the dish from the menu
+    menuArray[menuIndex].menu.splice(dishIndex, 1);
+
+    // Save the updated menuArray to local storage
+    localStorage.setItem('menus', JSON.stringify(menuArray));
+
+    // Reload the menus
+    loadMenus();
+
+    save.classList.add('hidden')
+    document.querySelector('form').classList.add('hidden')
 }
