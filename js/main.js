@@ -10,6 +10,68 @@ const close = document.getElementById('close');
 const displayArea = document.getElementById('display-area');
 const foodMenuNameInput = document.getElementById('food-menu-name');
 
+//Image slider
+
+const slidesLeft = document.querySelectorAll('.slides-left img')
+const slideRight = document.querySelectorAll('.slides-right img')
+let slideIndexLeft = 0
+let slideIndexRight = 0
+let intervalIdLeft = null;
+let intervalIdRight = null;
+
+document.addEventListener('DOMContentLoaded', initializerSlide)
+
+function initializerSlide() {
+    if (slidesLeft.length > 0) {
+        slidesLeft[slideIndexLeft].classList.add('displaySlide')
+        intervalIdLeft = setInterval(nextSlideLeft, 5000)
+    }
+    if (slideRight.length > 0) {
+        slideRight[slideIndexRight].classList.add('displaySlide')
+        intervalIdRight = setInterval(nextSlideRight, 5000)
+    }
+
+}
+
+function showSlideLeft(index) {
+    if (index >= slidesLeft.length) {
+         slideIndexLeft = 0
+
+    } else if (index < 0) {
+        slideIndexLeft = slidesLeft.length - 1
+
+    }
+    slidesLeft.forEach(slide => {
+        slide.classList.remove('displaySlide')
+    })
+    slidesLeft[slideIndexLeft].classList.add('displaySlide')
+
+}
+function showSlideRight(index) {
+    
+    if ( index >= slideRight.length) {
+         slideIndexRight = 0
+    } else if (index < 0) {
+        slideIndexRight = slideRight.length - 1
+    }
+    slideRight.forEach(slide => {
+        slide.classList.remove('displaySlide')
+    })
+    slideRight[slideIndexRight].classList.add('displaySlide')
+}
+function nextSlideLeft() {
+    slideIndexLeft++
+    showSlideLeft(slideIndexLeft)
+
+}
+function nextSlideRight() {
+    slideIndexRight++
+    showSlideRight(slideIndexRight)
+}
+
+
+
+
 loadMenus();
 
 add.addEventListener('click', () => popup.classList.remove('hidden'));
