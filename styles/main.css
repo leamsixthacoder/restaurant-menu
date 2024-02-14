@@ -67,7 +67,31 @@ img {
 
 img.displaySlide{
     display: block;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
 }
+img.displaySlide:first-child{
+    opacity: 1;
+}
+
+@keyframes slide {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  img.displaySlide{
+    animation: slide 10s infinite;
+}
+  
 
 .center-content-container {
     align-self: self-start;
@@ -172,7 +196,8 @@ img.displaySlide{
 
 .form {
     background-color: #fff;
-    min-width: 500px;
+    min-width: 700px;
+    height: 30vh;
     padding: 20px;
     border-radius: 8px;
 
