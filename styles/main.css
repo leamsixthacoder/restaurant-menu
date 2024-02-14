@@ -1,19 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+
+@import url('../assets/fonts/Protest_Riot/ProtestRiot-Regular.ttf');
 
 * {
     box-sizing: border-box;
     margin: 0;
 }
 
+
+@font-face {
+    font-display: swap; 
+    font-family: 'Protest Revolution';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/protest-revolution-v2-latin/protest-revolution-v2-latin-regular.woff2') format('woff2'); 
+  }
+
+  @font-face {
+    font-display: swap; 
+    font-family: 'Protest Riot';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/protest-riot-v2-latin/protest-riot-v2-latin-regular.woff2') format('woff2'); 
+  }
+
 body {
     background-color: #000;
     color: #fefefe;
+
     font-family: 'Protest Riot', sans-serif;
+
 }
 
 header {
     text-align: center;
     margin: 1.5rem;
+    font-family: 'Protest Revolution', sans-serif;
 }
 
 .header-container {
@@ -48,13 +69,9 @@ img.displaySlide{
     display: block;
 }
 
-
-
 .center-content-container {
     align-self: self-start;
     margin: 0 50px;
-
-
 }
 
 .center-content-container h2 {
@@ -96,6 +113,7 @@ img.displaySlide{
     justify-content: space-between;
     color: #f15301;
     margin: 10px 0;
+    font-family: 'Protest Revolution', sans-serif;
 }
 
 .menu-header span {
@@ -137,86 +155,6 @@ img.displaySlide{
 }
 
 
-
-
-
-
-
-
-/* 
-.container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.header {
-    display: flex;
-    gap: 25px;
-    margin: 30px 20px;
-}
-.header h1{
-    font-size: 3.5rem;
-}
-.header > .icon{
-   align-self: center;
-}
- .icon:hover {
-    cursor: pointer;
-}
-
-.menu {
-    flex-wrap: wrap;
-}
-
-.images img {
-    width: 480px;
-}
-
-.food-menu {
-    margin: 10px 20px;
-    height: 100vh;
-    width: 45%;
-}
-
-.menu-header {
-    border-bottom: 3px solid #7e8d91;
-}
-
-.menu-header,
-.menu-content {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-.menu-header-action {
-    display: flex;
-}
-
-.menu-header h2 {
-    font-size: 2.5rem;
-    color: #1873e9;
-}
-
-.menu-header h2,
-.menu-content h3 {
-
-    margin-right: 25px;
-}
-
-.menu-header span {
-    font-size: 1.5rem;
-    align-self: center;
-}
-
-.menu-content h3 {
-    font-size: 1.5rem;
-}
-
-.menu-content span {
-    font-size: 2rem;
-    font-weight: 500;
-}
-*/
 
 .pop-up {
     display: flex;
@@ -265,83 +203,26 @@ img.displaySlide{
     display: none;
 }
 
-@media (width <=900px) {
-    .images {
-        display: none;
+@media (width <=1200px) {
+    
+    .center-content-container h2 {
+        font-size: 3.3rem;
+        margin: 10px 0 0 0;
+        color: #f15301;
     }
-
-    .container {
-        flex-direction: column;
-        justify-content: space-between;
+    
+    .center-content-container h1 {
+        font-size: 4.3rem;
+        text-transform: uppercase;
     }
-
-    .header {
-        display: flex;
-        justify-content: center;
-        margin: 30px auto;
-    }
-
-    .header h1 {
-        font-size: 2.5rem;
-    }
-
-    .header>.icon {
-        align-self: center;
-        width: 34px;
-        height: 34px;
-    }
-
-    .icon:hover {
-        cursor: pointer;
-    }
-
-    .menu {
-        flex-wrap: none;
-    }
-
-    .food-menu {
-        margin: 10px auto;
-        height: auto;
-        width: 80%;
-    }
-
-    .menu-header {
-        border-bottom: 3px solid #7e8d91;
-    }
-
-    .menu-header,
-    .menu-content {
+    
+    /* MENU STYLES */
+    
+    .container-menu {
         display: flex;
         justify-content: space-between;
-        margin-top: 20px;
-    }
-
-    .menu-header h2 {
-        font-size: 2rem;
-        color: #1873e9;
-    }
-
-    .menu-header h2,
-    .menu-content h3 {
-        margin-right: 25px;
-    }
-
-    .menu-header span {
-        font-size: 1.5rem;
-        align-self: center;
-    }
-
-    .menu-content h3 {
-        font-size: 1rem;
-    }
-
-    .menu-content span {
-        font-size: 1rem;
-        font-weight: 500;
-    }
-
-
-    .hidden {
-        display: none;
-    }
+        flex-wrap: wrap;
+        margin: 20px 50px;
+    } 
+    
 }
