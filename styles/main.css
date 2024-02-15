@@ -40,6 +40,7 @@ header {
     display: flex;
     overflow: hidden;
     justify-content: space-between;
+    flex-grow: 1;
 }
 
 img {
@@ -53,9 +54,6 @@ img {
     width: 450px;
     margin: auto;
     overflow: hidden;
-    /* border: 10px solid #f15301;
-    border-radius: 50%; */
-
 }
 
 .left-image-container img {
@@ -114,8 +112,9 @@ img.displaySlide {
 .container-menu-static  {
     position: relative;
     margin: 0 auto;
+    flex-grow: 1;
 }
-.food-menu-static {
+.food-menu-static, .food-menu-drinks {
     display: none;
 }
 
@@ -139,8 +138,6 @@ img.displaySlide {
     text-transform: uppercase;
 }
 
-
-
 .menu-header-static h2:hover {
     cursor: pointer;
 }
@@ -155,20 +152,19 @@ img.displaySlide {
 
 .menu-content-static h3 {
     font-size: 2rem;
-    margin-right: 8.5rem;
 }
 
 .menu-content-static span {
     font-size: 1.8rem;
 }
 
-.food-menu-static.displaySlideMenu {
+.food-menu-static.displaySlide, .food-menu-drinks.displaySlide {
     display: block;
     opacity: 0;
     transition: opacity 0.5s ease-in;
 }
 
-.food-menu-static.displaySlideMenu:first-child {
+.food-menu-static.displaySlide:first-child, .food-menu-drinks.displaySlide:first-child {
     opacity: 1;
 }
 
@@ -190,15 +186,9 @@ img.displaySlide {
     }
 }
 
-.food-menu-static.displaySlideMenu {
+.food-menu-static.displaySlide, .food-menu-drinks.displaySlide {
     animation: slideMenu 10s infinite;
 }
-
-
-
-
-
-
 
 /* BOTTOM MENU STYLES */
 
@@ -211,7 +201,7 @@ img.displaySlide {
 .container-menu  {
     position: relative;
     margin: 0 2rem;
-    flex-grow: 1;
+    flex-grow: 2.2;
 }
 
 .food-menu {
@@ -253,21 +243,20 @@ img.displaySlide {
 }
 
 .menu-content h3 {
-    font-size: 2rem;
-    margin-right: 3.5rem;
+    font-size: 2.8rem;
 }
 
 .menu-content span {
     font-size: 1.8rem;
 }
 
- .food-menu.displaySlideMenu {
+ .food-menu.displaySlide {
     display: block;
     opacity: 0;
     transition: opacity 0.5s ease-in;
 }
 
-.food-menu.displaySlideMenu:first-child {
+.food-menu.displaySlide:first-child {
     opacity: 1;
 }
 
@@ -289,14 +278,68 @@ img.displaySlide {
     }
 }
 
-.food-menu.displaySlideMenu {
+.food-menu.displaySlide {
     animation: slideMenu 10s infinite;
 } 
 
 
 .container-menu-drinks {
+    position: relative;
+    margin: 0 2rem;
     flex-grow: 1;
 }
+
+.food-menu-drinks {
+    /* display: none; */
+}
+
+.menu-header-drinks {
+    display: flex;
+    justify-content: space-between;
+    color: #f15301;
+    margin: 10px 0;
+    font-family: 'Protest Revolution', sans-serif;
+    /* gap: 5rem; */
+}
+.menu-header-drinks h2 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+}
+
+.menu-header-drinks span {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    align-self: center;
+    text-transform: uppercase;
+}
+
+
+
+.menu-header-drinks h2:hover {
+    cursor: pointer;
+}
+
+.menu-content-drinks {
+    font-family: 'Protest Riot', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    align-items: center;
+}
+
+.menu-content-drinks h3 {
+    font-size: 2.8rem;
+}
+
+.menu-content-drinks span {
+    font-size: 1.8rem;
+}
+
+
+
+
+
+
 
 .pop-up {
     display: flex;
