@@ -2,34 +2,73 @@ const menuArray = JSON.parse(localStorage.getItem('menus')) || [];
 const addedValues = [];
 
 const menuContainer = document.getElementById('menuContainer');
-const add = document.getElementById('add');
+// const add = document.getElementById('add');
 const addMoreField = document.getElementById('add-more');
 const popup = document.querySelector('.pop-up');
 const save = document.getElementById('save');
-const close = document.getElementById('close');
+const close = document.querySelector('.backButton');
 const deleteArray = document.getElementById('delete');
 const displayArea = document.getElementById('display-area');
 const foodMenuNameInput = document.getElementById('food-menu-name');
-const message = document.createElement('span')
-message.className = 'warning'
-//Image slider
+const message = document.createElement('span');
+const listContainerContent = document.querySelector('.list-container-content')
 
+message.className = 'warning'
 
 loadMenus();
 
-add.addEventListener('click', openPopop);
+// add.addEventListener('click', openPopup);
 addMoreField.addEventListener('click', addMoreFields);
 save.addEventListener('click', addMenuList);
 close.addEventListener('click', closePop);
 
-function openPopop () {
+function openPopup() {
     popup.classList.remove('hidden')
-    document.querySelector('.header-add-menu h3').innerHTML = 'Añadir Menu'
+
+    const storedMenus = JSON.parse(localStorage.getItem('menus')) || [];
+
+    // Clear existing content
+    listContainerContent.innerHTML = '';
+    storedMenus.forEach(menus => {
+
+
+        const listContainerItem = document.createElement('div');
+        listContainerItem.classList.add('list-container-item');
+        listContainerItem.innerHTML = `
+    
+         <span id="menu-li" href="">${menus.name}</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M4 7l16 0" />
+                <path d="M10 11l0 6" />
+                <path d="M14 11l0 6" />
+                <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" onclick="editMenu(${storedMenus.indexOf(menus)})" class="icon icon-tabler icon-tabler-pencil" width="24" height="24"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+                <path d="M13.5 6.5l4 4" /></svg>
+        
+        `;
+
+        listContainerContent.appendChild(listContainerItem)
+    })
+
+
+
+
+
+    // document.querySelector('.header-add-menu h3').innerHTML = 'Añadir Menu'
 }
+
 function closePop() {
-    document.querySelectorAll('.dynamic-fields input').forEach(input => (input.value = ''));
-    foodMenuNameInput.value = '';
-    displayArea.innerHTML = '';
+    // document.querySelectorAll('.dynamic-fields input').forEach(input => (input.value = ''));
+    // foodMenuNameInput.value = '';
+    // displayArea.innerHTML = '';
     popup.classList.add('hidden');
 }
 
@@ -121,7 +160,7 @@ function loadMenus() {
         container.innerHTML = `
             <div class="menu-header">
                 <div class="menu-header-action">
-                <h2 onclick="editMenu(${storedMenus.indexOf(menu)})">${menu.name}</h2>
+                <h2 onclick="openPopup()">${menu.name}</h2>
                 </div>
                 <span>RD$</span>
             </div>
@@ -143,6 +182,7 @@ function loadMenus() {
 
 
 function editMenu(index) {
+
     // Open modal
     popup.classList.remove('hidden');
     document.querySelector('.header-add-menu h3').innerHTML = 'Editar Menu'
@@ -166,7 +206,6 @@ function editMenu(index) {
         displayArea.appendChild(newItem);
     });
 
-    deleteArray.addEventListener('click', deleteList(index))
     // Update only the menu property of the selected menu
     selectedMenu.menu = addedValues;
 

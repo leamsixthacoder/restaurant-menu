@@ -17,7 +17,10 @@ function initializeSlider(slides, startIndex, intervalDuration, nextSlideFunctio
     }
 
     function nextSlide() {
-        index++
+        index++;
+        if (index >= slides.length) {
+            index = 0;
+        }
         showSlide(index);
     }
 

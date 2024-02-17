@@ -345,7 +345,7 @@ img.displaySlide {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
     height: 100vh;
     top: 0;
@@ -355,13 +355,62 @@ img.displaySlide {
     color: #000;
 }
 
-.form {
+.section-manage-container {
     position: relative;
     background-color: #fff;
     min-width: 700px;
-    height: 60vh;
+    height: 90vh;
     padding: 20px;
     border-radius: 8px;
+}
+
+.list-container {
+    margin: 2rem auto;
+}
+.list-container-header {
+    text-align: center;
+}
+.list-container-header h2 {
+    font-size: 3.5rem;
+}
+
+.list-container-content {
+    margin: 3rem auto;
+}
+
+.list-container-item {
+    margin: 1rem 0;
+}
+.list-container-item span {
+    font-size: 2.5rem;
+    color: #f15301;
+}
+.list-container-item svg {
+    color: #007bff;
+}
+.list-container-item svg:hover {
+    cursor: pointer;
+}
+.list-container-item .icon-tabler-trash {
+    margin: 0 0.5rem;
+    color: #b34d46;
+}
+
+.backButton {
+    padding: 8px 15px;
+    border-radius: 4px;
+    margin-left: 600px;
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #7fb9f0;
+}
+.backButton:hover {
+    cursor: pointer;
+}
+
+.form {
+
 
 }
 

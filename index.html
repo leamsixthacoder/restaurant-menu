@@ -18,6 +18,12 @@
           <img class="slide" src="assets/images/PresidenteNormalLight.jpg" alt="dishes">
           <img class="slide" src="assets/images/pechurina.jpg" alt="dishes">
           <img class="slide" src="assets/images/refrescos.jpg" alt="dishes">
+          <img class="slide" src="assets/images/Corona.webp" alt="dishes">
+          <img class="slide" src="assets/images/mangu-tres-golpes.jpg" alt="dishes">
+          <img class="slide" src="assets/images/pasta.jpg" alt="dishes">
+          <img class="slide" src="assets/images/planeta.png" alt="dishes">
+          <img class="slide" src="assets/images/yuca.jpg" alt="dishes">
+          <img class="slide" src="assets/images/sandwiche.jpg" alt="dishes">
         </div>
       </div>
       <div class="center-content-container">
@@ -151,39 +157,50 @@
 
 
   <div class="pop-up hidden">
-    <div class="form" id="food-form">
-      <form class="">
-        <div class="header-add-menu">
-          <h3>Añadir Menu</h3>
+    <section class="section-manage-container">
+      <div class="list-container">
+        <div class="list-container-header">
+          <h2>Listado Menus</h2>
         </div>
-        <label for="food-menu-name" class="label-menu">Nombre Menu</label>
-        <input id="food-menu-name" name="food-menu-name" class="input-menu" type="text">
-        <div class="dynamic-fields">
-          <div>
-            <label for="dish-name">Plato</label>
-            <input id="dish-name" class="dish-input" name="dish-name[]" type="text">
-            <label for="price">Precio</label>
-            <input id="price" class="price-input" name="price[]" type="text">
-          </div>
-          <div class="add-more">
-            <svg id="add-more" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="30"
-              height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M12 5l0 14" />
-              <path d="M5 12l14 0" />
-            </svg>
-          </div>
+        <div class="list-container-content">
+        
         </div>
-      </form>
+        <button class="backButton">Regresar</button>
+      </div>
+      <div class="form hidden" id="food-form">
+        <form class="">
+          <div class="header-add-menu">
+            <h3>Añadir Menu</h3>
+          </div>
+          <label for="food-menu-name" class="label-menu">Nombre Menu</label>
+          <input id="food-menu-name" name="food-menu-name" class="input-menu" type="text">
+          <div class="dynamic-fields">
+            <div>
+              <label for="dish-name">Plato</label>
+              <input id="dish-name" class="dish-input" name="dish-name[]" type="text">
+              <label for="price">Precio</label>
+              <input id="price" class="price-input" name="price[]" type="text">
+            </div>
+            <div class="add-more">
+              <svg id="add-more" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="30"
+                height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M12 5l0 14" />
+                <path d="M5 12l14 0" />
+              </svg>
+            </div>
+          </div>
+        </form>
 
-      <div id="display-area"></div>
-      <button id="save">Guardar</button>
-      <button id="close">Cerrar</button>
-      <!-- <button id="delete">Delete</button> -->
-      <div class="message-action hidden"><span>Plato eliminado correctamente</span></div>
-    </div>
-  </div>
+        <div id="display-area"></div>
+        <button id="save">Guardar</button>
+        <button id="close">Cerrar</button>
+        <!-- <button id="delete">Delete</button> -->
+        <div class="message-action hidden"><span>Plato eliminado correctamente</span></div>
+      </div>
+    </section>
+
   </div>
   <script src="js/main.js"></script>
   <script src="js/animation.js"></script>
