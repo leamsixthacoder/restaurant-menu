@@ -24,5 +24,99 @@ body {
     background-color: #000;
     color: #fefefe;
     font-family: 'Protest Riot', sans-serif;
+    overflow: hidden;
+}
 
+.brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Protest Revolution';
+    height: 100vh;
+}
+
+.brand h1 {
+    font-size: 122px;
+    text-transform: uppercase;
+    color: #c41e1e;
+}
+
+.bounce-in {
+    animation: bounce-in 3s ease infinite;
+}
+
+@keyframes bounce-in {
+    0% {
+        opacity: 0;
+        transform: scale(.3);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+.menu-container {
+position: relative;
+}
+.image-menu-container {
+    width: 950px;
+    margin: 0 5px;
+}
+.image-menu-container img{
+    width: 100%;
+    border-radius: 8px;
+}
+
+.content-menu-container {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    top: 50px;
+    margin-left: 10px;
+}
+
+.dish {
+    background-color: #c41e1e;
+    border-radius: 4px;
+    width: 350px;
+    margin:2px auto;
+
+}
+.dish h2 {
+    font-size: 32px;
+}
+.price {
+    background-color: #fefefe;
+    width: 350px;
+    border-radius: 4px;
+    color: #000;
+    margin:2px auto;
+}
+.price span {
+    font-size: 58px;
 }
