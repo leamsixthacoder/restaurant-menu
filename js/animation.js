@@ -1,3 +1,36 @@
+const restauranName = document.querySelector('.brand')
+
+document.addEventListener('DOMContentLoaded', () => {
+    restauranName.classList.add('bounce-in')
+    setTimeout(() => {
+        restauranName.classList.add('hidden');
+    }, 2500); 
+    
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function initializeSlider(slides, startIndex, intervalDuration, nextSlideFunction) {
     let index = startIndex;
     let intervalId = null;
