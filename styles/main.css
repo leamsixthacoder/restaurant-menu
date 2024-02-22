@@ -73,7 +73,7 @@ body {
 
 section {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 100vh;
 }
@@ -82,11 +82,12 @@ section {
 position: relative;
 }
 .image-menu-container {
-    width: 950px;
+    max-width: 1250px;
     margin: 0 5px;
 }
 .image-menu-container img{
     width: 100%;
+    height: auto;
     border-radius: 8px;
 }
 
