@@ -52,52 +52,21 @@ function initializeSlider(slides, startIndex, intervalDuration, nextSlideFunctio
 
 
 
-//Image Slider
-
-const imageSlider = initializeSlider(
-    document.querySelectorAll('.slides-left img'),
-    0,
-    6000,
-    nextSlideImage
-)
 
 
 //Top Menu Slider
-const topMenuSlider = initializeSlider(
+const menuContainerSlider = initializeSlider(
     document.querySelectorAll('.menu-container'), 
     0, 
     5000, 
-    nextSlide
+    menuContainerNextSlide
 )
 
-// Bottom Menu Slider
-const bottomMenuSlider = initializeSlider(
-    document.querySelectorAll('.food-menu'),
-    0,
-    9000,
-    nextSlideBottom
-);
-// Bottom Menu Slider Drinks
-const bottomMenuSliderDrinks = initializeSlider(
-    document.querySelectorAll('.food-menu-drinks'),
-    0,
-    9000,
-    nextSlideBottomDrinks
-);
 
-function nextSlideImage() {
-    imageSlider.nextSlide();
+
+
+function menuContainerNextSlide() {
+    menuContainerSlider.nextSlide();
 }
 
 
-function nextSlide() {
-    topMenuSlider.nextSlide();
-}
-
-
-function nextSlideBottom() {
-    bottomMenuSlider.nextSlide();
-}
-function nextSlideBottomDrinks() {
-    bottomMenuSliderDrinks.nextSlide();
-}
