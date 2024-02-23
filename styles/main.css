@@ -24,7 +24,7 @@ body {
     background-color: #000;
     color: #fefefe;
     font-family: 'Protest Riot', sans-serif;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .brand {
@@ -78,14 +78,30 @@ section {
     height: 100vh;
 }
 
-.menu-container {
-position: relative;
+.rices {
+    position: relative;
 }
+
+.rices h3 {
+    font-size: 65px;
+    background-color: #c41e1e;
+    border-radius: 4px;
+    width: fit-content;
+    padding: 2px 25px;
+    margin: 2px auto;
+}
+
+.menu-container {
+    position: relative;
+    display: none;
+}
+
 .image-menu-container {
     max-width: 1250px;
-    margin: 0 5px;
+    margin: 25px 5px;
 }
-.image-menu-container img{
+
+.image-menu-container img {
     width: 100%;
     height: auto;
     border-radius: 8px;
@@ -104,20 +120,162 @@ position: relative;
 .dish {
     background-color: #c41e1e;
     border-radius: 4px;
-    width: 350px;
-    margin:2px auto;
+    max-width: 450px;
+    margin: 2px auto;
+    padding: 10px 15px;
 
 }
+
 .dish h2 {
-    font-size: 32px;
+    font-size: 52px;
 }
+
 .price {
     background-color: #fefefe;
     width: 350px;
     border-radius: 4px;
     color: #000;
-    margin:2px auto;
+
+    margin: 2px auto;
 }
+
 .price span {
     font-size: 58px;
 }
+
+.menu-container.displaySlide{
+    display: block;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.menu-container.displaySlide:first-child {
+    opacity: 1;
+}
+
+@keyframes slideMenu {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.menu-container.displaySlide {
+    animation: slideMenu 10s infinite;
+}
+
+.bounce-in-menu {
+    animation: bounce-in-menu 5s ease 0s 1 normal forwards;
+}
+
+@keyframes bounce-in-menu {
+    0% {
+        opacity: 0;
+        transform: scale(.3);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* .container-menu-static  {
+    position: relative;
+    margin: 0 auto;
+    flex-grow: 1;
+}
+.food-menu-static, .food-menu-drinks {
+    display: none;
+}
+
+.menu-header-static {
+    display: flex;
+    justify-content: space-between;
+    color: #f15301;
+    margin: 10px 0;
+    font-family: 'Protest Revolution', sans-serif;
+    gap: 5rem;
+}
+.menu-header-static h2 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+}
+
+.menu-header-static span {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    align-self: center;
+    text-transform: uppercase;
+}
+
+.menu-header-static h2:hover {
+    cursor: pointer;
+}
+
+.menu-content-static {
+    font-family: 'Protest Riot', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    align-items: center;
+}
+
+.menu-content-static h3 {
+    font-size: 2rem;
+}
+
+.menu-content-static span {
+    font-size: 1.8rem;
+}
+
+.food-menu-static.displaySlide, .food-menu-drinks.displaySlide {
+    display: block;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.food-menu-static.displaySlide:first-child, .food-menu-drinks.displaySlide:first-child {
+    opacity: 1;
+}
+
+@keyframes slideMenu {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.food-menu-static.displaySlide, .food-menu-drinks.displaySlide {
+    animation: slideMenu 10s infinite;
+} */
