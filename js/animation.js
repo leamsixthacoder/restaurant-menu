@@ -11,28 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function initializeSlider(slides, startIndex, intervalDuration, nextSlideFunction) {
     let index = startIndex;
     let intervalId = null;
@@ -86,9 +64,9 @@ const imageSlider = initializeSlider(
 
 //Top Menu Slider
 const topMenuSlider = initializeSlider(
-    document.querySelectorAll('.food-menu-static'), 
+    document.querySelectorAll('.menu-container'), 
     0, 
-    9000, 
+    5000, 
     nextSlide
 )
 
