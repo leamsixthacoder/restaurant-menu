@@ -21,7 +21,7 @@
 }
 
 body {
-    background-color: #000;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url('../assets/images/menu-background.jpg');
     color: #fefefe;
     font-family: 'Protest Riot', sans-serif;
     /* overflow: hidden; */
@@ -78,11 +78,11 @@ section {
     height: 100vh;
 }
 
-.rices {
+.dishes-container {
     position: relative;
 }
 
-.rices h3 {
+.dishes-container h3 {
     font-size: 65px;
     background-color: #c41e1e;
     border-radius: 4px;
@@ -104,6 +104,7 @@ section {
 .image-menu-container img {
     width: 100%;
     height: auto;
+    border: none;
     border-radius: 8px;
 }
 
