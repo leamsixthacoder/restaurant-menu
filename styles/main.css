@@ -78,7 +78,7 @@ section {
     height: 100vh;
 }
 
-.dishes-container {
+.dishes-container  {
     position: relative;
 }
 
@@ -90,6 +90,7 @@ section {
     padding: 2px 25px;
     margin: 2px auto;
 }
+
 
 .menu-container {
     position: relative;
@@ -150,7 +151,7 @@ section {
     transition: opacity 0.5s ease-in;
 }
 
-.menu-container.displaySlide:first-child {
+.menu-container.displaySlide:first-child  {
     opacity: 1;
 }
 
@@ -172,7 +173,7 @@ section {
     }
 }
 
-.menu-container.displaySlide {
+.menu-container.displaySlide{
     animation: slideMenu 10s infinite;
 }
 
