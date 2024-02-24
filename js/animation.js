@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         restauranName.classList.add('hidden');
     }, 2500); 
-    document.querySelector('.menu-container').classList.remove('hidden')
+
+        document.querySelector('section').classList.remove('hidden')
+
 
 })
 
@@ -54,16 +56,15 @@ function initializeSlider(slides, startIndex, intervalDuration, nextSlideFunctio
 
 
 
-//Top Menu Slider
+
+
+//Menu Container Slider
 const menuContainerSlider = initializeSlider(
     document.querySelectorAll('.menu-container'), 
     0, 
     5000, 
     menuContainerNextSlide
 )
-
-
-
 
 function menuContainerNextSlide() {
     menuContainerSlider.nextSlide();
