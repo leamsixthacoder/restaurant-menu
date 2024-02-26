@@ -29,6 +29,7 @@ body {
     overflow: hidden;
 }
 
+/* BRAND NAME DISPLAY*/
 .brand {
     display: flex;
     flex-direction: column;
@@ -44,6 +45,95 @@ body {
     color: #c41e1e;
 }
 
+
+
+.hidden {
+    display: none;
+}
+
+/*MENU STYLES*/
+
+.menu-container {
+    margin: 2rem 1rem;
+}
+
+.menu-container .slider {
+    position: relative;
+    display: none;
+    overflow: hidden; 
+}
+
+/*MENU DISH STYLES*/
+.menu-dish-container  {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.menu-dish-container .dishes .dish-slides {
+    position: relative;
+
+}
+.menu-dish-container .dishes .dish-slides .image-dish-container .image-dish-container-name {
+    background-color: #c41e1e;
+    position: absolute;
+    top: 1rem;
+    left: 10px;
+}
+.menu-dish-container .dishes .dish-slides .image-dish-container img {
+    border-radius: 8px;
+}
+.menu-dish-container .dishes .dish-slides .image-dish-container .image-dish-container-name {
+    background-color: #c41e1e;
+    position: absolute;
+    top: 1rem;
+    left: 10px;
+}
+.menu-dish-container .dishes .dish-slides .image-dish-container .image-dish-container-name h3 {
+    font-size: 42px;
+    padding: 10px 15px;
+}
+
+
+
+
+
+/* MENU DISHES STYLES*/
+.menu-container .menu-dishes-container .dish-title h2{
+    font-size: 52px;
+    letter-spacing: 2px;
+}
+.menu-dishes-container .dishes .dishes-slides {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    display: none;
+    overflow: hidden;
+}
+
+.menu-dishes-container .dishes .dishes-slides .image-dish-container {
+    position: relative;
+}
+.menu-dishes-container .dishes .dishes-slides .image-dish-container img {
+    border-radius: 8px;
+    width: 600px;
+    height: 850px;
+}
+.menu-dishes-container .dishes .dishes-slides .image-dish-container .image-dish-container-name {
+    background-color: #c41e1e;
+    position: absolute;
+    top: 1rem;
+    left: 10px;
+}
+.menu-dishes-container .dishes .dishes-slides .image-dish-container .image-dish-container-name h3 {
+    font-size: 42px;
+    padding: 10px 15px;
+}
+
+
+
+/*BOUNCE IN ANIMATION*/
 .bounce-in {
     animation: bounce-in 3s ease infinite;
 }
@@ -68,52 +158,8 @@ body {
     }
 }
 
-.hidden {
-    display: none;
-}
 
-.menu-container {
-    margin: 2rem 1rem;
-}
-
-.menu-container .slider {
-    position: relative;
-    display: none;
-    overflow: hidden; 
-}
-
-.menu-container .menu-dishes-container .dish-title h2{
-    font-size: 52px;
-    letter-spacing: 2px;
-}
-.menu-dishes-container .dishes .dishes-slides {
-    margin-top: 1rem;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    display: none;
-    overflow: hidden;
-}
-
-.dishes .dishes-slides .image-dish-container {
-    position: relative;
-}
-.dishes .dishes-slides .image-dish-container img {
-    border-radius: 8px;
-    width: 600px;
-    height: 850px;
-}
-.dishes .dishes-slides .image-dish-container .image-dish-container-name {
-    background-color: #c41e1e;
-    position: absolute;
-    top: 1rem;
-    left: 10px;
-}
-.dishes .dishes-slides .image-dish-container .image-dish-container-name h3 {
-    font-size: 42px;
-    padding: 10px 15px;
-}
+/*SLIDE ANIMATION*/
 .menu-container .slider.displaySlide {
     display: flex;
     flex-direction: column;
@@ -151,6 +197,45 @@ body {
 .dishes .dishes-slides.displaySlide, .menu-container .slider.displaySlide{
     animation: slideMenu 10s infinite;
 }
+
+
+
+/*MAKE THE ELEMENT BIGGER ANIMATION*/
+@keyframes growAnimation {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+}
+
+.growElement {
+    animation: growAnimation 10s ease-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* section {
     display: flex;
     justify-content: center;
