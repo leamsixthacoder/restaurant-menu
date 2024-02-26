@@ -2,18 +2,18 @@ const restauranName = document.querySelector('.brand')
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    restauranName.classList.add('bounce-in')
-    setTimeout(() => {
-        restauranName.classList.add('hidden');
-    }, 2500); 
+    // restauranName.classList.add('bounce-in')
 
-        document.querySelector('section').classList.remove('hidden')
+    restauranName.addEventListener('animationend', () => {
+        restauranName.classList.add('hidden');
+        otherElement.style.opacity = '1';
+    })
 
 
 })
 
 
-function initializeSlider(slides, startIndex, intervalDuration, nextSlideFunction) {
+function initializeSlider(slides, startIndex, intervalDuration, nextSlideFunction, styleClass) {
     let index = startIndex;
     let intervalId = null;
 
@@ -25,10 +25,10 @@ function initializeSlider(slides, startIndex, intervalDuration, nextSlideFunctio
         }
 
         slides.forEach(slide => {
-            slide.classList.remove('displaySlide');
+            slide.classList.remove(styleClass);
         });
 
-        slides[index].classList.add('displaySlide')
+        slides[index].classList.add(styleClass)
     }
 
     function nextSlide() {
@@ -41,7 +41,7 @@ function initializeSlider(slides, startIndex, intervalDuration, nextSlideFunctio
 
     document.addEventListener('DOMContentLoaded', () => {
         if (slides.length > 0) {
-            slides[startIndex].classList.add('displaySlide');
+            slides[startIndex].classList.add(styleClass);
             intervalId = setInterval(nextSlideFunction, intervalDuration);
         }
     });
@@ -60,14 +60,27 @@ function initializeSlider(slides, startIndex, intervalDuration, nextSlideFunctio
 
 //Menu Container Slider
 const menuContainerSlider = initializeSlider(
-    document.querySelectorAll('.menu-container'), 
+    document.querySelectorAll('.dishes .dishes-slides'), 
     0, 
-    5000, 
-    menuContainerNextSlide
+    4000, 
+    menuContainerNextSlide,
+    'displaySlide'
 )
 
 function menuContainerNextSlide() {
     menuContainerSlider.nextSlide();
+}
+
+const mainContent = initializeSlider(
+    document.querySelectorAll('.slider'), 
+    0, 
+    8000, 
+    mainContentNextSlide,
+    'displaySlide'
+)
+
+function mainContentNextSlide() {
+    mainContent.nextSlide();
 }
 
 
