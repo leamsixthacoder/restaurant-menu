@@ -2,12 +2,12 @@ const restauranName = document.querySelector('.brand')
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // restauranName.classList.add('bounce-in')
-
-    restauranName.addEventListener('animationend', () => {
+    restauranName.classList.add('bounce-in')
+    setTimeout(() => {
         restauranName.classList.add('hidden');
-        otherElement.style.opacity = '1';
-    })
+    }, 2500); 
+
+        document.querySelector('section').classList.remove('hidden')
 
 
 })
