@@ -5,9 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     restauranName.classList.add('bounce-in')
     setTimeout(() => {
         restauranName.classList.add('hidden');
-    }, 2500); 
-
-        document.querySelector('section').classList.remove('hidden')
+    }, 8000); 
 
 
 })
