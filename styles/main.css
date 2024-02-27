@@ -68,9 +68,12 @@ body {
     align-items: center;
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 .menu-dish-container .dishes .dish-slides {
     position: relative;
+    display: none;
+    overflow: hidden;
 
 }
 .menu-dish-container .dishes .dish-slides .image-dish-container .image-dish-container-name {
@@ -80,19 +83,33 @@ body {
     left: 10px;
 }
 .menu-dish-container .dishes .dish-slides .image-dish-container img {
+    margin-top: 2rem;
     border-radius: 8px;
+    min-width: 1000px
 }
 .menu-dish-container .dishes .dish-slides .image-dish-container .image-dish-container-name {
     background-color: #c41e1e;
     position: absolute;
-    top: 1rem;
+    text-align: center;
+    top: 3rem;
     left: 10px;
 }
 .menu-dish-container .dishes .dish-slides .image-dish-container .image-dish-container-name h3 {
     font-size: 42px;
     padding: 10px 15px;
 }
+.image-dish-container-price{
+   
+    background-color: #fefefe;
+    width: 350px;
+    border-radius: 4px;
+    color: #000;
 
+    margin: 2px auto;
+}
+.image-dish-container-price span{
+    font-size: 58px;
+}
 
 
 
@@ -124,6 +141,7 @@ body {
     background-color: #c41e1e;
     position: absolute;
     top: 1rem;
+    text-align: center;
     left: 10px;
 }
 .menu-dishes-container .dishes .dishes-slides .image-dish-container .image-dish-container-name h3 {
@@ -166,13 +184,18 @@ body {
     opacity: 0;
     transition: opacity 0.5s ease-in;
 }
-.dishes .dishes-slides.displaySlide{
+.menu-dish-container .dishes .dish-slides.displaySlide{
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+.menu-dishes-container .dishes .dishes-slides.displaySlide{
     display: flex;
     opacity: 0;
     transition: opacity 0.5s ease-in;
 }
 
-.dishes .dishes-slides.displaySlide:first-child, .menu-container .slider.displaySlide  {
+.menu-dishes-container .dishes .dishes-slides.displaySlide:first-child, .menu-container .slider.displaySlide:first-child, .menu-dish-container .dishes .dish-slides.displaySlide:first-child  {
     opacity: 1;
 }
 
@@ -194,7 +217,7 @@ body {
     }
 }
 
-.dishes .dishes-slides.displaySlide, .menu-container .slider.displaySlide{
+.menu-dishes-container .dishes .dishes-slides.displaySlide, .menu-container .slider.displaySlide, .menu-dish-container .dishes .dish-slides.displaySlide{
     animation: slideMenu 10s infinite;
 }
 
