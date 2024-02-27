@@ -69,6 +69,18 @@ function menuContainerNextSlide() {
     menuContainerSlider.nextSlide();
 }
 
+const menuContainerDishSlider = initializeSlider(
+    document.querySelectorAll('.dishes .dish-slides'), 
+    0, 
+    2000, 
+    menuContainerDishNextSlide,
+    'displaySlide'
+)
+
+function menuContainerDishNextSlide() {
+    menuContainerDishSlider.nextSlide();
+}
+
 const mainContent = initializeSlider(
     document.querySelectorAll('.slider'), 
     0, 
